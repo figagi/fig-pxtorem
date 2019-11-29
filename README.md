@@ -64,7 +64,8 @@ Default:
     replace: true,
     mediaQuery: false,
     minPixelValue: 0,
-    exclude: /node_modules/i
+    exclude: ['/path/a','/path/b'],
+    include: ['/path/a','/path/b']
 }
 ```
 
@@ -84,8 +85,8 @@ Default:
 - `replace` (Boolean) replaces rules containing rems instead of adding fallbacks.
 - `mediaQuery` (Boolean) Allow px to be converted in media queries.
 - `minPixelValue` (Number) Set the minimum pixel value to replace.
-- `inclue` (Array)  must absolute path ['/path/a','/path/b'].
-- `exclude` (Array) must absolute path ['/path/a','/path/b'].
+- `inclue` (Array)  inclue files, use: must absolute path ['/path/a','/path/b'].
+- `exclude` (Array) exclude files, use:  must absolute path ['/path/a','/path/b'].
 ### Use with gulp-postcss and autoprefixer
 
 ```js
