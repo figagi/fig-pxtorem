@@ -1,0 +1,33 @@
+{
+  "name": "postcss-pxtorem-x",
+  "description": "A CSS post-processor that converts px to rem.",
+  "version": "1.0.0",
+  "author": "wsdo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wsdo/postcss-pxtorem-x.git"
+  },
+  "bugs": "https://github.com/wsdo/postcss-pxtorem-x/issues",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node spec"
+  },
+  "devDependencies": {
+    "jasmine-node": "~1.11.0"
+  },
+  "peerDependencies":{
+    "postcss": "^7.0.23"
+  },
+  "keywords": [
+    "css",
+    "rem",
+    "pixel",
+    "px",
+    "postcss",
+    "postcss-plugin"
+  ],
+  "dependencies": {
+    "object-assign": "^4.1.0"
+  }
+}
