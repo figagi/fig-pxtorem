@@ -7,12 +7,10 @@ $ yarn add fix-pxtorem -S
 ## Usage
 
 * inclue files
-* exclude files
 
 ## config include exclude
 
 - `inclue` (Array)  inclue files, use: must absolute path ['/path/a','/path/b'].
-- `exclude` (Array) exclude files, use:  must absolute path ['/path/a','/path/b'].
 
 ```
 const path = require('path');
@@ -134,7 +132,6 @@ Default:
 - `mediaQuery` (Boolean) Allow px to be converted in media queries.
 - `minPixelValue` (Number) Set the minimum pixel value to replace.
 - `inclue` (Array)  inclue files, use: must absolute path ['/path/a','/path/b'].
-- `exclude` (Array) exclude files, use:  must absolute path ['/path/a','/path/b'].
 ### Use with gulp-postcss and autoprefixer
 
 ```js

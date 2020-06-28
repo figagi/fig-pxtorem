@@ -40,27 +40,20 @@ module.exports = postcss.plugin("postcss-pxtorem", function(options) {
   var satisfyPropList = createPropListMatcher(opts.propList);
 
   return function(css) {
-    var exclude = opts.exclude;
+    // var exclude = opts.exclude;
     var include = opts.include;
     var filePath = css.source.input.file;
-    let flag = false;
-    // exclude node_modules
+    let isInclude = false;
 
     if(filePath.includes('node_modules')) return
 
-    if (Array.isArray(include)) {
-      flag = include.some(item => {
-        return (type.isString(item) && filePath.includes(item))
+    if (Array.isArray(include) && include.length > 0) {
+      isInclude = include.some((item) => {
+        return filePath.includes(item);
       });
     }
 
-    if (Array.isArray(exclude)) {
-      flag = exclude.some(item => {
-        return !(type.isString(item) && filePath.includes(item))
-      });
-    }
-
-    if (!flag) return
+    if (!isInclude) return;
 
     css.walkDecls(function(decl, i) {
       // This should be the fastest test and will remove most declarations
