@@ -44,26 +44,24 @@ module.exports = postcss.plugin("postcss-pxtorem", function(options) {
     var include = opts.include;
     var filePath = css.source.input.file;
     let flag = false;
-    if (include.length !== 0) {
-      include.forEach(item => {
-        if (type.isString(item) && filePath.indexOf(item) == -1) {
-          return flag = true;
-        } else if (filePath.match(item) == null) {
-          return flag = true;
-        }
+    // exclude node_modules
+
+    if(filePath.includes('node_modules')) return
+
+    if (Array.isArray(include)) {
+      flag = include.some(item => {
+        return (type.isString(item) && filePath.includes(item))
       });
     }
 
-    if (exclude.length !== 0) {
-      exclude.forEach(item => {
-        if (type.isString(item) && filePath.indexOf(item) !== -1) {
-          return flag = true;
-        } else if (filePath.match(item) !== null) {
-          return flag = true;
-        }
+    if (Array.isArray(exclude)) {
+      flag = exclude.some(item => {
+        return !(type.isString(item) && filePath.includes(item))
       });
     }
-    if (flag) return
+
+    if (!flag) return
+
     css.walkDecls(function(decl, i) {
       // This should be the fastest test and will remove most declarations
       if (decl.value.indexOf("px") === -1) return;

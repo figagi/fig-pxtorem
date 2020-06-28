@@ -29,12 +29,12 @@ module.exports = {
       },
       stage: 3
     }),
-    require('postcss-pxtorem-x')({
+    require('fig-pxtorem')({
       rootValue: 16,
       unitPrecision: 5,
       mediaQuery: false,
       minPixelValue: 0,
-      include: [resolveApp('/src/pages/m'), resolveApp('/src/pages/m')],
+      include: [resolveApp('/src/pages/m'), resolveApp('/src/xxx/m')],
       propList: [
         '*background*',
         '*padding*',

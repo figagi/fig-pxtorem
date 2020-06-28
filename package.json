@@ -1,7 +1,7 @@
 {
   "name": "fig-pxtorem",
   "description": "A CSS post-processor that converts px to rem.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "starkwang",
   "license": "MIT",
   "repository": {
