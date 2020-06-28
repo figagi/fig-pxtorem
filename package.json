@@ -1,14 +1,14 @@
 {
-  "name": "postcss-pxtorem-x",
+  "name": "fig-pxtorem",
   "description": "A CSS post-processor that converts px to rem.",
-  "version": "1.0.1",
-  "author": "wsdo",
+  "version": "1.0.2",
+  "author": "starkwang",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:wsdo/postcss-pxtorem-x.git"
+    "url": "git@github.com:wsdo/fig-pxtorem.git"
   },
-  "bugs": "https://github.com/wsdo/postcss-pxtorem-x/issues",
+  "bugs": "https://github.com/wsdo/fig-pxtorem/issues",
   "main": "index.js",
   "scripts": {
     "test": "jasmine-node spec"

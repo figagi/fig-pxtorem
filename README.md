@@ -1,13 +1,61 @@
 ## Install
 
 ```shell
-$ npm install postcss-pxtorem-x --save-dev
+$ yarn add fix-pxtorem -S
 ```
 
 ## Usage
 
-Pixels are the easiest unit to use (*opinion*). The only issue with them is that they don't let browsers change the default font size of 16. This script converts every px value to a rem from the properties you choose to allow the browser to set the font size.
+* inclue files
+* exclude files
 
+## config include exclude
+
+- `inclue` (Array)  inclue files, use: must absolute path ['/path/a','/path/b'].
+- `exclude` (Array) exclude files, use:  must absolute path ['/path/a','/path/b'].
+
+```
+const path = require('path');
+const fs = require('fs');
+
+const appDirectory = fs.realpathSync(process.cwd());
+const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
+module.exports = {
+  plugins: [
+    require('postcss-flexbugs-fixes'),
+    require('postcss-preset-env')({
+      autoprefixer: {
+        flexbox: 'no-2009'
+      },
+      stage: 3
+    }),
+    require('postcss-pxtorem-x')({
+      rootValue: 16,
+      unitPrecision: 5,
+      mediaQuery: false,
+      minPixelValue: 0,
+      include: [resolveApp('/src/pages/m'), resolveApp('/src/pages/m')],
+      propList: [
+        '*background*',
+        '*padding*',
+        '*margin*',
+        'letter-spacing',
+        '*width',
+        '*height',
+        'left',
+        'font*',
+        'right',
+        'top',
+        'bottom'
+      ]
+    })
+    // require('antd-mobile')({
+    //   style: "css"
+    // })
+  ]
+};
+
+```
 
 ### Input/Output
 
