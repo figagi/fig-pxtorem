@@ -1,7 +1,7 @@
 ## Install
 
 ```shell
-$ yarn add fix-pxtorem -S
+$ yarn add fig-pxtorem -S
 ```
 
 ## Usage
