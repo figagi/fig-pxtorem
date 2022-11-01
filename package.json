@@ -14,7 +14,7 @@
     "test": "jasmine-node spec"
   },
   "devDependencies": {
-    "jasmine-node": "~1.11.0"
+    "jasmine-node": "~1.16.2"
   },
   "peerDependencies":{
     "postcss": "^7.0.23"
